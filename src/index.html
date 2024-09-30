@@ -1,0 +1,90 @@
+<!doctype html>
+<html data-theme="corporate">
+    <head>
+        <title>Quackmire</title>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, height=device-height"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script type="module" src="/main.js" defer></script>
+        <script src="monaco-editor/min/vs/loader.js"></script>
+    </head>
+    <body class="font-mono text-base-content min-h-screen">
+        <main class="">
+            <div class="drawer lg:drawer-open">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                    <div class="flex-grow flex flex-col h-screen">
+                        <div class="h-1/2 mb-4">
+                            <form
+                                id="create-table-form"
+                                class="form-control h-full"
+                            >
+                                <div class="flex justify-end">
+                                    <button type="submit" class="btn btn-sm">
+                                        <a class="tooltip" data-tip="Run">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-5 w-5"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M5 3l14 9-14 9V3z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </button>
+                                </div>
+                                <div
+                                    id="monaco-editor-container"
+                                    class="flex-grow"
+                                    style="width: 100%"
+                                ></div>
+                            </form>
+                        </div>
+                        <div class="divider"></div>
+                        <div
+                            id="table-container"
+                            class="h-1/2 overflow-x-auto overflow-y-auto"
+                        >
+                            <table
+                                id="table"
+                                class="table table-xs table-pin-rows border-collapse"
+                            ></table>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-side">
+                    <label
+                        for="my-drawer"
+                        aria-label="close sidebar"
+                        class="drawer-overlay"
+                    ></label>
+                    <ul
+                        class="menu bg-base-200 text-base-content min-h-full w-80 overflow-y-auto"
+                    >
+                        <!-- <li><h2 class="menu-title">File Explorer</h2></li> -->
+                        <ul
+                            id="file-explorer"
+                            class="menu menu-xs bg-base-200 rounded-lg w-full max-w-xs"
+                        >
+                            <!-- File explorer content will be dynamically inserted here -->
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
